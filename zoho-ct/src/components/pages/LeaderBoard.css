@@ -3,6 +3,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: 'Secular One', sans-serif;
     width: 70vw;
     height: 70vh;
     background: #E5CFF7;
@@ -11,7 +12,7 @@
 }
 
 .leaderboard h1 {
-    font-size: 18px;
+    font-size: 15px;
     color: #252525;
     padding: 12px 13px 18px;
 }

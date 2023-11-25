@@ -5,7 +5,7 @@ import './LeaderBoard.css';
 
 const Container = styled.div`
   height: 80vh;
-  background-color: #e5cff7;
+  background-color: transparent;
   margin:30px;
   //border:2px solid grey;
 
@@ -29,11 +29,11 @@ const LeaderBoard = () => {
             <small>315</small>
         </li>
         <li>
-            <mark>Karthik J</mark>
+            <mark>Sakthi Y</mark>
             <small>301</small>
         </li>
         <li>
-            <mark>Sakthi Y</mark>
+            <mark>Pooja S</mark>
             <small>292</small>
         </li>
         <li>
