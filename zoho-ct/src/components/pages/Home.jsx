@@ -55,13 +55,16 @@ const Left = styled.div`
     @media screen and (max-height: 667px) {
       height:50%;
     }
-  
 `
 
 const Right = styled.div`
 
   display: flex;
+  flex-direction: column;
+  gap: 5px;
   height: 80vh;
+  padding-bottom: 5px;
+  padding-top:5px;
   background-color:#DDDDDD;
   border: 2px solid grey;
   border-radius: 20px;
@@ -73,6 +76,13 @@ const Right = styled.div`
     }
     @media screen and (max-height: 667px) {
       height:50%;
+    }
+    .ns{
+      height: 30px;
+      margin:0px 30px;
+      border: 1px solid grey;
+      padding: 2px 10px;
+      border-radius: 9999px;
     }
     
   
@@ -94,6 +104,7 @@ const Home = () => {
         />
       </Left>
       <Right>
+      <input className='ns' placeholder=' Search for help ...'/>
         <Gmap
           selectedCate={selectedCate}
         />

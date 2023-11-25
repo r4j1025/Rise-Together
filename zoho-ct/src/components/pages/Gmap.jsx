@@ -56,8 +56,9 @@ const Gmap = (params) => {
         key={index}
         longitude={c.lng}
         latitude={c.lat}
-        color={'#FF2E63'}
-        ></Marker>
+        ><center>
+        <img src='/pin.png' width="30px" height="30px"/>
+        <h4>{c.description}</h4></center></Marker>
         )}
         
         <NavigationControl position="bottom-right" />

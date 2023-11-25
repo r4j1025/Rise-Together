@@ -5,7 +5,6 @@ import Guidance from './components/pages/Guidelines';
 import LeaderBoard from './components/pages/LeaderBoard';
 import './index.css';
 import { Routes,Route,BrowserRouter } from 'react-router-dom';
-import MapProfile from './components/pages/MapProfile';
 
 function App() {
 
@@ -19,7 +18,7 @@ function App() {
         <Route path='/feeds' element={ <Feeds />}/>
         <Route path='/guidance' element={ <Guidance />}/>
         <Route path='/leaderboard' element={ <LeaderBoard />}/>
-        <Route path='/mapprofile' element={ <MapProfile />}/>
+        
       </Routes>
     </BrowserRouter>
     </>

@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios'
 
 const Container = styled.div`
 
@@ -226,7 +227,7 @@ img{
   height: 60%;
 
   img{
-      object-fit: cover;
+
       
     }
      
@@ -334,51 +335,31 @@ h3{
 `
 
 const Feeds = () => {
+  const [data,setData]=useState([])
+  useEffect(()=>{
+    axios.get('http://localhost:3001/getData')
+    .then(data=>setData(data.data))
+    .catch(err => console.log(err))
+  },[])
+
   return (
     <Container>
     <Section>
       <Left>
       <FeedsContainer>
+      {
+        data.map(data=>{
         <PostCard>
-        <PostImg><img src='/flood.jpg'/></PostImg>
+        <PostImg><img src={data.img}/></PostImg>
         <PostDes>
-          <h3>Flood Rescue Volunteers Needed:</h3>
-          <p>🚨 Urgent Call for Volunteers 🚨 Floods have hit our community, and we need strong, capable volunteers for rescue operations. If you can lend a helping hand, please join us at the community center at 9 AM. Your assistance can make a difference! #FloodRescue #VolunteerNeeded</p>
+          <h3>{data.h3}</h3>
+          <p>{data.p}</p>
           <p className='contact'>contact</p>
         </PostDes>
         </PostCard>
-        <PostCard>
-        <PostImg><img src='/blood.jpg'/></PostImg>
-        <PostDes>
-          <h3>A+ Blood Urgently Needed for 15-Year-Old Boy:</h3>
-          <p>🩸Urgent Blood Donation Appeal, A 15-year-old boy involved in a road accident urgently needs A+ blood. If you or anyone you know can donate, please visit the local hospital's blood bank. Every drop counts! #BloodDonation #Emergency</p>
-          <p className='contact'>contact</p>
-        </PostDes>
-        </PostCard>
-        <PostCard>
-        <PostImg><img src='/floodcamp.jpg'/></PostImg>
-        <PostDes>
-          <h3> Flood Relief Camp at Indira Gandhi Stadium, Pondicherry:</h3>
-          <p> Flood Relief Camp 🏕️ A relief camp has been set up at Indira Gandhi Stadium, Pondicherry, to provide shelter, food, and medical assistance to those affected by the floods. If you need help or want to contribute. Stay safe, everyone! #ReliefCamp #FloodSupport</p>
-          <p className='contact'>contact</p>
-        </PostDes>
-        </PostCard>
-        <PostCard>
-        <PostImg><img src='/pump.jpg'/></PostImg>
-        <PostDes>
-          <h3>Water Pump Needed for House Drainage:</h3>
-          <p>I am Vishnu from muthialpet, due to heavy rain my house is flooded, and we need a water pump to drain the water. If anyone has a functioning water pump or can help arrange one, please contact us immediately. Time is of the essence. #FloodAssistance #CommunityHelp</p>
-          <p className='contact'>contact</p>
-        </PostDes>
-        </PostCard>
-        <PostCard>
-        <PostImg><img src='/food.jpg'/></PostImg>
-        <PostDes>
-          <h3>Food Supply for Flood-Affected People:</h3>
-          <p>Food Supply Needed 🍲 The flood has left many families in need of basic supplies. We are collecting non-perishable food items to distribute to affected households. Drop off your contributions at the local school by 3 PM. Let's stand together in this time of need. #CommunitySupport #FoodDrive</p>
-          <p className='contact'>contact</p>
-        </PostDes>
-        </PostCard>
+      })
+      }
+        
       </FeedsContainer>
       </Left>
       <Right>

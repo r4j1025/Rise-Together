@@ -47,7 +47,7 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Guidance
+                Guidelines
               </Link>
             </li>
           </ul>

@@ -55,7 +55,7 @@ const Cate = styled.div`
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
-    border: 1.5px solid #190482;
+    //border: 1.5px solid #190482;
     cursor:pointer;
   }
 
@@ -95,6 +95,13 @@ const Cate = styled.div`
     font-size:0.8rem;
   }
   }
+  @media screen and (max-height: 667px) {
+    img {
+    height: 25px;
+    width: 25px;
+    padding: 0.1em;
+  }
+    }
 `;
 
 
